@@ -17,7 +17,7 @@ EOF
 
 say "Validate app.json"
 
-docker run --rm -i -v "$PWD":/mnt -v "$(realpath "$(dirname $0)/../vendor")":/vendor -w /mnt miy4/json-schema-validator /vendor/mesosphere/marathon/v1.1.1/docs/docs/rest-api/public/api/v2/schema/AppDefinition.json app.json
+docker run --rm -i -v "$PWD":/mnt -v "$PWD"/app-tools/vendor:/vendor -w /mnt miy4/json-schema-validator /vendor/mesosphere/marathon/v1.1.1/docs/docs/rest-api/public/api/v2/schema/AppDefinition.json app.json
 
 say "Validate Dockerfile"
 
